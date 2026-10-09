@@ -1,0 +1,69 @@
+{
+  "referenceDate": "2026-10-09",
+  "executedAtUTC": "2026-10-09T07:03:25.875Z",
+  "mode": "REAL_CHILD_PROCESSES_AND_PI_SDK_WITH_OFFICIAL_FAUX_MODEL_FIXTURES",
+  "realComponents": [
+    "two Node child processes",
+    "Pi 1.1.0 createAgentSession",
+    "independent in-memory sessions",
+    "actual restricted teaching-file reads"
+  ],
+  "started": [
+    {
+      "role": "rules",
+      "pid": 87377
+    },
+    {
+      "role": "tests",
+      "pid": 87378
+    }
+  ],
+  "results": [
+    {
+      "role": "rules",
+      "ok": true,
+      "pid": 87377,
+      "sessionId": "01a11f79-4d91-74c6-99af-d4b71ca2f423",
+      "marker": "RULES_ONLY_CONTEXT",
+      "otherMarkerAbsent": true,
+      "exposedTools": [
+        "read_rules_evidence"
+      ],
+      "assignedFiles": [
+        "README.md",
+        "src/summary.ts"
+      ],
+      "toolCalls": 1,
+      "fixtureModelCalls": 2,
+      "realModelCalls": 0,
+      "result": {
+        "role": "rules",
+        "mode": "PREWRITTEN_FIXTURE_ANSWER_NOT_LLM_REASONING",
+        "findings": [
+          "教学预置结论：应检查缺省 archived 是否被计入。"
+        ],
+        "evidence": [
+          "README.md",
+          "src/summary.ts"
+        ],
+        "limits": [
+          "This answer was queued by the test harness, not inferred by a real model."
+        ]
+      }
+    },
+    {
+      "role": "tests",
+      "ok": false,
+      "code": 2,
+      "signal": null,
+      "error": "DELIBERATE FIXTURE FAILURE: tests reviewer unavailable"
+    }
+  ],
+  "complete": false,
+  "limits": [
+    "Model responses are prewritten fixtures, not model reasoning.",
+    "This is our SDK orchestration example, not a recording of the official subagent extension.",
+    "Processes still share host OS permissions; exposed tools are not a sandbox.",
+    "No real provider, credentials, network or model cost was involved."
+  ]
+}

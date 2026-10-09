@@ -1,0 +1,14 @@
+{
+  "broken": {
+    "total": 2,
+    "open": 0,
+    "inProgress": 1,
+    "done": 1
+  },
+  "fixed": {
+    "total": 4,
+    "open": 1,
+    "inProgress": 1,
+    "done": 2
+  }
+}

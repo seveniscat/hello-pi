@@ -1,0 +1,19 @@
+{
+  "referenceDate": "2026-10-09",
+  "executedAtUTC": "2026-10-09T07:03:26.381Z",
+  "passed": 7,
+  "modes": {
+    "router": "ROUTER_CALLBACK_TEST_WITH_FIXTURE_CATALOG_NO_MODEL_DISPATCH",
+    "sessions": "REAL_SESSION_API_WITH_HAND_AUTHORED_MESSAGES_NO_MODEL",
+    "codemode": "REAL_PI_CODEMODE_1_1_0_QUICKJS_WITH_LOCAL_TOOLS_NO_MODEL_NO_MCP",
+    "steering": "REAL_PI_1.1.0_CORE_LOOP_WITH_PREWRITTEN_PROVIDER_RESPONSES",
+    "subagents": "REAL_CHILD_PROCESSES_AND_PI_SDK_WITH_OFFICIAL_FAUX_MODEL_FIXTURES",
+    "subagents-partial-failure": "REAL_CHILD_PROCESSES_AND_PI_SDK_WITH_OFFICIAL_FAUX_MODEL_FIXTURES",
+    "durable": "REAL_PI_DURABLE_1_1_0_JSONL_HARNESS_TASK_ACROSS_SIGKILL_AND_REOPEN_NO_MODEL"
+  },
+  "limits": [
+    "No real provider call, TUI demonstration, MCP transport or model-quality benchmark was performed.",
+    "Router catalog, steering responses and subagent model responses are explicit fixtures; see per-demo reports.",
+    "Durable is a real custom task and real process restart, not a model-driven tool recovery test."
+  ]
+}

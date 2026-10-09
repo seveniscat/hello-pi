@@ -1,0 +1,36 @@
+{
+  "referenceDate": "2026-10-09",
+  "executedAtUTC": "2026-10-09T07:03:22.679Z",
+  "node": "v22.19.0",
+  "checks": [
+    "broken baseline intentionally has 4 pass / 1 fail",
+    "reference repair has 5 pass / 0 fail",
+    "CLI sample is independently checked before and after repair",
+    "CLI missing-argument branch has a nonzero exit",
+    "reference changes only the archive predicate",
+    "verify refuses to run while the agent is busy",
+    "verify rejects an unrelated working directory",
+    "verify never treats a stopped process as success (simulated branch)",
+    "Pi 1.1.0 real loader and real exec report the broken suite as FAIL",
+    "Pi 1.1.0 real loader and real exec report the fixed suite as PASS"
+  ],
+  "limits": [
+    "No real model call, credentials check, interactive TUI test, static TypeScript check, MCP connection, or Durable runtime test was performed.",
+    "Reference repair and example outputs are authored teaching fixtures, not a recorded model run."
+  ],
+  "piLoaderVersion": "1.1.0",
+  "extensionMessages": [
+    {
+      "heading": "verify: FAIL; exit=1; stopped=false",
+      "options": {
+        "triggerTurn": false
+      }
+    },
+    {
+      "heading": "verify: PASS; exit=0; stopped=false",
+      "options": {
+        "triggerTurn": false
+      }
+    }
+  ]
+}

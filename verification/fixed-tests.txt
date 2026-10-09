@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: empty input has zero counts
+ok 1 - empty input has zero counts
+  ---
+  duration_ms: 0.54975
+  type: 'test'
+  ...
+# Subtest: archived tasks are excluded
+ok 2 - archived tasks are excluded
+  ---
+  duration_ms: 0.050875
+  type: 'test'
+  ...
+# Subtest: explicitly active tasks are counted by status
+ok 3 - explicitly active tasks are counted by status
+  ---
+  duration_ms: 0.05575
+  type: 'test'
+  ...
+# Subtest: missing archived defaults to active (mixed fixture)
+ok 4 - missing archived defaults to active (mixed fixture)
+  ---
+  duration_ms: 2.333166
+  type: 'test'
+  ...
+# Subtest: summary does not mutate its input
+ok 5 - summary does not mutate its input
+  ---
+  duration_ms: 0.178416
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 62.374916

@@ -1,0 +1,93 @@
+{
+  "referenceDate": "2026-10-09",
+  "executedAtUTC": "2026-10-09T07:03:24.155Z",
+  "realComponents": [
+    "Pi 1.1.0 SessionManager",
+    "branch",
+    "branchWithSummary",
+    "buildSessionContext"
+  ],
+  "mode": "REAL_SESSION_API_WITH_HAND_AUTHORED_MESSAGES_NO_MODEL",
+  "checks": {
+    "mainExcludesSibling": true,
+    "branchContainsItsQuestion": true,
+    "navigationDoesNotRevertFile": true,
+    "explicitSummaryIsIncluded": true
+  },
+  "mainContext": [
+    {
+      "role": "user",
+      "content": "共同目标：修复任务统计，保留原验收规则。",
+      "timestamp": 1791529404153
+    },
+    {
+      "role": "user",
+      "content": "主线：只修改筛选条件，随后运行五项测试。",
+      "timestamp": 1791529404154
+    }
+  ],
+  "branchContext": [
+    {
+      "role": "user",
+      "content": "共同目标：修复任务统计，保留原验收规则。",
+      "timestamp": 1791529404153
+    },
+    {
+      "role": "user",
+      "content": "支线：讨论将来是否接受 archived:null；本次不扩范围。",
+      "timestamp": 1791529404154
+    }
+  ],
+  "withSummary": [
+    {
+      "role": "user",
+      "content": "共同目标：修复任务统计，保留原验收规则。",
+      "timestamp": 1791529404153
+    },
+    {
+      "role": "user",
+      "content": "主线：只修改筛选条件，随后运行五项测试。",
+      "timestamp": 1791529404154
+    },
+    {
+      "role": "branchSummary",
+      "summary": "讲者手写摘要：null 属于后续需求，本次只验收 boolean 或缺省。",
+      "fromId": "c114726c",
+      "timestamp": 1791529404155
+    }
+  ],
+  "tree": [
+    {
+      "depth": 0,
+      "type": "message",
+      "id": "c114726c",
+      "parentId": null,
+      "content": "共同目标：修复任务统计，保留原验收规则。"
+    },
+    {
+      "depth": 1,
+      "type": "message",
+      "id": "1f5a889c",
+      "parentId": "c114726c",
+      "content": "主线：只修改筛选条件，随后运行五项测试。"
+    },
+    {
+      "depth": 2,
+      "type": "branch_summary",
+      "id": "f091046d",
+      "parentId": "1f5a889c",
+      "content": "讲者手写摘要：null 属于后续需求，本次只验收 boolean 或缺省。"
+    },
+    {
+      "depth": 1,
+      "type": "message",
+      "id": "66aeb5bc",
+      "parentId": "c114726c",
+      "content": "支线：讨论将来是否接受 archived:null；本次不扩范围。"
+    }
+  ],
+  "limits": [
+    "Messages and summary are authored teaching inputs, not generated model responses.",
+    "No TUI navigation, model request, automatic summary or compaction was tested."
+  ]
+}

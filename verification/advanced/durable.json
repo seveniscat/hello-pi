@@ -1,0 +1,223 @@
+{
+  "referenceDate": "2026-10-09",
+  "executedAtUTC": "2026-10-09T07:03:26.375Z",
+  "mode": "REAL_PI_DURABLE_1_1_0_JSONL_HARNESS_TASK_ACROSS_SIGKILL_AND_REOPEN_NO_MODEL",
+  "realComponents": [
+    "Harness",
+    "defineTask",
+    "Node JSONL storage with fsync",
+    "actual child-process SIGKILL",
+    "second-process recovery"
+  ],
+  "counts": {
+    "A": 1,
+    "B": 2,
+    "taskIds": [
+      7
+    ]
+  },
+  "recoveredPhase": "B",
+  "result": {
+    "taskIds": [
+      "T-101",
+      "T-102"
+    ],
+    "draft": "待审查任务：T-101、T-102"
+  },
+  "runs": [
+    {
+      "mode": "crash",
+      "status": null,
+      "signal": "SIGKILL",
+      "events": [
+        {
+          "event": "BEFORE_SCHEDULING",
+          "data": {
+            "id": 7,
+            "conversationId": 1,
+            "kind": "demo.local-process",
+            "version": 1,
+            "input": {
+              "text": "[{\"id\":\"T-101\",\"status\":\"open\",\"ownerEmail\":\"a@example.invalid\",\"description\":\"缺省 archived 的旧任务被遗漏\",\"internalNote\":\"教学备注，不应进入答案\"},{\"id\":\"T-102\",\"status\":\"in_progress\",\"archived\":false,\"ownerEmail\":\"b@example.invalid\",\"description\":\"修复导出文件名\",\"internalNote\":\"教学备注\"},{\"id\":\"T-103\",\"status\":\"done\",\"ownerEmail\":\"c@example.invalid\",\"description\":\"已完成，但保留旧失败记录\",\"internalNote\":\"教学备注\"},{\"id\":\"T-104\",\"status\":\"done\",\"archived\":false,\"ownerEmail\":\"d@example.invalid\",\"description\":\"更新说明\",\"internalNote\":\"教学备注\"},{\"id\":\"T-105\",\"status\":\"open\",\"archived\":true,\"ownerEmail\":\"e@example.invalid\",\"description\":\"已归档，检查仍失败\",\"internalNote\":\"教学备注\"}]"
+            },
+            "background": false,
+            "abortRequested": false,
+            "state": {
+              "status": "pending",
+              "checkpoint": {
+                "phase": "A"
+              }
+            }
+          }
+        },
+        {
+          "event": "B_ENTERED_WITH_DURABLE_CHECKPOINT",
+          "data": {
+            "phase": "B",
+            "processed": [
+              "T-101",
+              "T-102"
+            ]
+          }
+        },
+        {
+          "event": "SIGKILL_SELF",
+          "data": {
+            "pid": 87380,
+            "taskId": 7
+          }
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "mode": "resume",
+      "status": 0,
+      "signal": null,
+      "events": [
+        {
+          "event": "BEFORE_SCHEDULING",
+          "data": {
+            "id": 7,
+            "conversationId": 1,
+            "kind": "demo.local-process",
+            "version": 1,
+            "input": {
+              "text": "[{\"id\":\"T-101\",\"status\":\"open\",\"ownerEmail\":\"a@example.invalid\",\"description\":\"缺省 archived 的旧任务被遗漏\",\"internalNote\":\"教学备注，不应进入答案\"},{\"id\":\"T-102\",\"status\":\"in_progress\",\"archived\":false,\"ownerEmail\":\"b@example.invalid\",\"description\":\"修复导出文件名\",\"internalNote\":\"教学备注\"},{\"id\":\"T-103\",\"status\":\"done\",\"ownerEmail\":\"c@example.invalid\",\"description\":\"已完成，但保留旧失败记录\",\"internalNote\":\"教学备注\"},{\"id\":\"T-104\",\"status\":\"done\",\"archived\":false,\"ownerEmail\":\"d@example.invalid\",\"description\":\"更新说明\",\"internalNote\":\"教学备注\"},{\"id\":\"T-105\",\"status\":\"open\",\"archived\":true,\"ownerEmail\":\"e@example.invalid\",\"description\":\"已归档，检查仍失败\",\"internalNote\":\"教学备注\"}]"
+            },
+            "background": false,
+            "abortRequested": false,
+            "state": {
+              "status": "pending",
+              "checkpoint": {
+                "phase": "B",
+                "processed": [
+                  "T-101",
+                  "T-102"
+                ]
+              }
+            },
+            "startedAt": 1791529406145
+          }
+        },
+        {
+          "event": "B_ENTERED_WITH_DURABLE_CHECKPOINT",
+          "data": {
+            "phase": "B",
+            "processed": [
+              "T-101",
+              "T-102"
+            ]
+          }
+        },
+        {
+          "event": "SETTLED",
+          "data": {
+            "id": 7,
+            "conversationId": 1,
+            "kind": "demo.local-process",
+            "version": 1,
+            "input": {
+              "text": "[{\"id\":\"T-101\",\"status\":\"open\",\"ownerEmail\":\"a@example.invalid\",\"description\":\"缺省 archived 的旧任务被遗漏\",\"internalNote\":\"教学备注，不应进入答案\"},{\"id\":\"T-102\",\"status\":\"in_progress\",\"archived\":false,\"ownerEmail\":\"b@example.invalid\",\"description\":\"修复导出文件名\",\"internalNote\":\"教学备注\"},{\"id\":\"T-103\",\"status\":\"done\",\"ownerEmail\":\"c@example.invalid\",\"description\":\"已完成，但保留旧失败记录\",\"internalNote\":\"教学备注\"},{\"id\":\"T-104\",\"status\":\"done\",\"archived\":false,\"ownerEmail\":\"d@example.invalid\",\"description\":\"更新说明\",\"internalNote\":\"教学备注\"},{\"id\":\"T-105\",\"status\":\"open\",\"archived\":true,\"ownerEmail\":\"e@example.invalid\",\"description\":\"已归档，检查仍失败\",\"internalNote\":\"教学备注\"}]"
+            },
+            "background": false,
+            "abortRequested": false,
+            "state": {
+              "status": "terminal",
+              "outcome": {
+                "status": "completed",
+                "result": {
+                  "taskIds": [
+                    "T-101",
+                    "T-102"
+                  ],
+                  "draft": "待审查任务：T-101、T-102"
+                }
+              }
+            },
+            "startedAt": 1791529406145,
+            "endedAt": 1791529406273
+          }
+        },
+        {
+          "event": "PHASE_ENTRIES",
+          "data": {
+            "A": 1,
+            "B": 2,
+            "taskIds": [
+              7
+            ]
+          }
+        },
+        {
+          "event": "USAGE",
+          "data": {
+            "models": {},
+            "tools": {}
+          }
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "mode": "inspect",
+      "status": 0,
+      "signal": null,
+      "events": [
+        {
+          "event": "BEFORE_SCHEDULING",
+          "data": {
+            "id": 7,
+            "conversationId": 1,
+            "kind": "demo.local-process",
+            "version": 1,
+            "input": {
+              "text": "[{\"id\":\"T-101\",\"status\":\"open\",\"ownerEmail\":\"a@example.invalid\",\"description\":\"缺省 archived 的旧任务被遗漏\",\"internalNote\":\"教学备注，不应进入答案\"},{\"id\":\"T-102\",\"status\":\"in_progress\",\"archived\":false,\"ownerEmail\":\"b@example.invalid\",\"description\":\"修复导出文件名\",\"internalNote\":\"教学备注\"},{\"id\":\"T-103\",\"status\":\"done\",\"ownerEmail\":\"c@example.invalid\",\"description\":\"已完成，但保留旧失败记录\",\"internalNote\":\"教学备注\"},{\"id\":\"T-104\",\"status\":\"done\",\"archived\":false,\"ownerEmail\":\"d@example.invalid\",\"description\":\"更新说明\",\"internalNote\":\"教学备注\"},{\"id\":\"T-105\",\"status\":\"open\",\"archived\":true,\"ownerEmail\":\"e@example.invalid\",\"description\":\"已归档，检查仍失败\",\"internalNote\":\"教学备注\"}]"
+            },
+            "background": false,
+            "abortRequested": false,
+            "state": {
+              "status": "terminal",
+              "outcome": {
+                "status": "completed",
+                "result": {
+                  "taskIds": [
+                    "T-101",
+                    "T-102"
+                  ],
+                  "draft": "待审查任务：T-101、T-102"
+                }
+              }
+            },
+            "startedAt": 1791529406145,
+            "endedAt": 1791529406273
+          }
+        },
+        {
+          "event": "PHASE_ENTRIES",
+          "data": {
+            "A": 1,
+            "B": 2,
+            "taskIds": [
+              7
+            ]
+          }
+        },
+        {
+          "event": "USAGE",
+          "data": {
+            "models": {},
+            "tools": {}
+          }
+        }
+      ],
+      "stderr": ""
+    }
+  ],
+  "limits": [
+    "A custom deterministic task is tested, not a model-driven conversation or unsafe ToolTask.",
+    "The execution-attempt log is our observer; checkpoints and task recovery are implemented by real Durable.",
+    "A chosen process-crash point is not a power-loss, disk-corruption or distributed exactly-once test.",
+    "No model provider or external notification service is configured."
+  ]
+}

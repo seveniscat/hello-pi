@@ -1,0 +1,42 @@
+{
+  "referenceDate": "2026-10-09",
+  "checkedFiles": [
+    "README.md",
+    "talk/pi-sharing-manuscript.md",
+    "talk/demo-runbook.md",
+    "talk/presenter-cue-sheet.md",
+    "talk/qa-and-exercises.md",
+    "research/source-register.md"
+  ],
+  "localLinks": 93,
+  "citations": 62,
+  "shellBlocks": 23,
+  "scriptReferences": 33,
+  "schedules": {
+    "60": {
+      "segments": 10,
+      "minutes": 60,
+      "contiguous": true
+    },
+    "75": {
+      "segments": 10,
+      "minutes": 75,
+      "contiguous": true
+    },
+    "90": {
+      "segments": 10,
+      "minutes": 90,
+      "contiguous": true
+    }
+  },
+  "crossChecks": {
+    "readmeMatchesMain": true,
+    "headingsMatchMain": true,
+    "subsections": 18,
+    "cueSegments": 22,
+    "cueMinutes": 75,
+    "exerciseMinutes": 15
+  },
+  "totalCjkCharacters": 8355,
+  "note": "Structure, references and syntax audit only; does not verify live URLs, factual truth, model quality or TUI behavior."
+}

@@ -1,0 +1,73 @@
+TAP version 13
+# Subtest: empty input has zero counts
+ok 1 - empty input has zero counts
+  ---
+  duration_ms: 1.369041
+  type: 'test'
+  ...
+# Subtest: archived tasks are excluded
+ok 2 - archived tasks are excluded
+  ---
+  duration_ms: 0.059917
+  type: 'test'
+  ...
+# Subtest: explicitly active tasks are counted by status
+ok 3 - explicitly active tasks are counted by status
+  ---
+  duration_ms: 0.053416
+  type: 'test'
+  ...
+# Subtest: missing archived defaults to active (mixed fixture)
+not ok 4 - missing archived defaults to active (mixed fixture)
+  ---
+  duration_ms: 3.394958
+  type: 'test'
+  location: '/private/var/folders/y1/ld9d8w192pd24j_3zch7_1t40000gn/T/pi-sharing-check-ERwcq9/broken/test/summary.test.mjs:26:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      {
+    +   done: 1,
+    -   done: 2,
+        inProgress: 1,
+    +   open: 0,
+    +   total: 2
+    -   open: 1,
+    -   total: 4
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    total: 4
+    open: 1
+    inProgress: 1
+    done: 2
+  actual:
+    total: 2
+    open: 0
+    inProgress: 1
+    done: 1
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///private/var/folders/y1/ld9d8w192pd24j_3zch7_1t40000gn/T/pi-sharing-check-ERwcq9/broken/test/summary.test.mjs:29:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: summary does not mutate its input
+ok 5 - summary does not mutate its input
+  ---
+  duration_ms: 0.722583
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 4
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 84.250792

@@ -1,0 +1,13 @@
+{
+  "name": "pi-sharing-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test test/summary.test.mjs",
+    "demo": "node --disable-warning=ExperimentalWarning src/cli.ts fixtures/tasks.json"
+  }
+}

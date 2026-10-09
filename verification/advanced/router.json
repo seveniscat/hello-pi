@@ -1,0 +1,56 @@
+{
+  "referenceDate": "2026-10-09",
+  "executedAtUTC": "2026-10-09T07:03:23.835Z",
+  "mode": "ROUTER_CALLBACK_TEST_WITH_FIXTURE_CATALOG_NO_MODEL_DISPATCH",
+  "selectedModel": "workshop/auto",
+  "steps": [
+    {
+      "reason": "user",
+      "selectedLevel": "high",
+      "route": {
+        "model": {
+          "provider": "fixture",
+          "id": "planner"
+        },
+        "thinkingLevel": "high"
+      }
+    },
+    {
+      "reason": "continuation",
+      "selectedLevel": "low",
+      "route": {
+        "model": {
+          "provider": "fixture",
+          "id": "planner"
+        },
+        "thinkingLevel": "high"
+      }
+    },
+    {
+      "reason": "user",
+      "selectedLevel": "low",
+      "route": {
+        "model": {
+          "provider": "fixture",
+          "id": "builder"
+        },
+        "thinkingLevel": "low"
+      }
+    },
+    {
+      "reason": "retry",
+      "selectedLevel": "high",
+      "route": {
+        "model": {
+          "provider": "fixture",
+          "id": "builder"
+        },
+        "thinkingLevel": "low"
+      }
+    }
+  ],
+  "limits": [
+    "Only the routing callback and continuation/retry policy were tested.",
+    "The model registry and model descriptors are fixtures; no real provider, cost, quality, TUI selection or model switch was tested."
+  ]
+}

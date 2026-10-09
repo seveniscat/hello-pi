@@ -1,0 +1,94 @@
+{
+  "referenceDate": "2026-10-09",
+  "executedAtUTC": "2026-10-09T07:03:25.494Z",
+  "mode": "REAL_CHILD_PROCESSES_AND_PI_SDK_WITH_OFFICIAL_FAUX_MODEL_FIXTURES",
+  "realComponents": [
+    "two Node child processes",
+    "Pi 1.1.0 createAgentSession",
+    "independent in-memory sessions",
+    "actual restricted teaching-file reads"
+  ],
+  "started": [
+    {
+      "role": "rules",
+      "pid": 87357
+    },
+    {
+      "role": "tests",
+      "pid": 87358
+    }
+  ],
+  "results": [
+    {
+      "role": "rules",
+      "ok": true,
+      "pid": 87357,
+      "sessionId": "01a11f79-4c12-7104-b006-ee3da5466054",
+      "marker": "RULES_ONLY_CONTEXT",
+      "otherMarkerAbsent": true,
+      "exposedTools": [
+        "read_rules_evidence"
+      ],
+      "assignedFiles": [
+        "README.md",
+        "src/summary.ts"
+      ],
+      "toolCalls": 1,
+      "fixtureModelCalls": 2,
+      "realModelCalls": 0,
+      "result": {
+        "role": "rules",
+        "mode": "PREWRITTEN_FIXTURE_ANSWER_NOT_LLM_REASONING",
+        "findings": [
+          "教学预置结论：应检查缺省 archived 是否被计入。"
+        ],
+        "evidence": [
+          "README.md",
+          "src/summary.ts"
+        ],
+        "limits": [
+          "This answer was queued by the test harness, not inferred by a real model."
+        ]
+      }
+    },
+    {
+      "role": "tests",
+      "ok": true,
+      "pid": 87358,
+      "sessionId": "01a11f79-4c11-76fc-ac42-c8d9c3370fe1",
+      "marker": "TESTS_ONLY_CONTEXT",
+      "otherMarkerAbsent": true,
+      "exposedTools": [
+        "read_tests_evidence"
+      ],
+      "assignedFiles": [
+        "test/summary.test.mjs",
+        "fixtures/tasks.json"
+      ],
+      "toolCalls": 1,
+      "fixtureModelCalls": 2,
+      "realModelCalls": 0,
+      "result": {
+        "role": "tests",
+        "mode": "PREWRITTEN_FIXTURE_ANSWER_NOT_LLM_REASONING",
+        "findings": [
+          "教学预置结论：混合样例断言覆盖本次缺省字段故障。"
+        ],
+        "evidence": [
+          "test/summary.test.mjs",
+          "fixtures/tasks.json"
+        ],
+        "limits": [
+          "This answer was queued by the test harness, not inferred by a real model."
+        ]
+      }
+    }
+  ],
+  "complete": true,
+  "limits": [
+    "Model responses are prewritten fixtures, not model reasoning.",
+    "This is our SDK orchestration example, not a recording of the official subagent extension.",
+    "Processes still share host OS permissions; exposed tools are not a sandbox.",
+    "No real provider, credentials, network or model cost was involved."
+  ]
+}

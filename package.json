@@ -1,0 +1,23 @@
+{
+  "name": "pi-technical-sharing-kit",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/verify-workshop.mjs",
+    "demo:broken": "node scripts/prepare-demo.mjs broken",
+    "demo:fixed": "node scripts/prepare-demo.mjs fixed --resources",
+    "check:docs": "node scripts/audit-docs.mjs",
+    "demo:router": "node demo/advanced/router.mjs",
+    "demo:sessions": "node demo/advanced/sessions.mjs",
+    "demo:codemode": "node demo/advanced/codemode.mjs",
+    "demo:subagents": "node demo/advanced/subagents.mjs",
+    "demo:subagents:failure": "node demo/advanced/subagents.mjs --fail-tests",
+    "demo:subagents:live": "node demo/advanced/subagents-live.mjs --live",
+    "demo:durable": "node demo/advanced/durable.mjs",
+    "check:advanced": "node scripts/verify-advanced.mjs",
+    "demo:steering": "node demo/advanced/steering.mjs"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "tasks": [
+    {"id":"T-101","status":"open","ownerEmail":"a@example.invalid","description":"缺省 archived 的旧任务被遗漏","internalNote":"教学备注，不应进入答案"},
+    {"id":"T-102","status":"in_progress","archived":false,"ownerEmail":"b@example.invalid","description":"修复导出文件名","internalNote":"教学备注"},
+    {"id":"T-103","status":"done","ownerEmail":"c@example.invalid","description":"已完成，但保留旧失败记录","internalNote":"教学备注"},
+    {"id":"T-104","status":"done","archived":false,"ownerEmail":"d@example.invalid","description":"更新说明","internalNote":"教学备注"},
+    {"id":"T-105","status":"open","archived":true,"ownerEmail":"e@example.invalid","description":"已归档，检查仍失败","internalNote":"教学备注"}
+  ],
+  "checks": [
+    {"taskId":"T-101","result":"failed","reason":"缺省 archived 被遗漏","fullLog":"教学长日志：不需要返回"},
+    {"taskId":"T-102","result":"passed","reason":"","fullLog":"教学长日志"},
+    {"taskId":"T-103","result":"failed","reason":"已完成任务的旧失败","fullLog":"教学长日志"},
+    {"taskId":"T-104","result":"passed","reason":"","fullLog":"教学长日志"},
+    {"taskId":"T-105","result":"failed","reason":"已归档任务的失败","fullLog":"教学长日志"}
+  ]
+}

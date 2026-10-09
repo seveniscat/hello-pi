@@ -1,0 +1,137 @@
+{
+  "referenceDate": "2026-10-09",
+  "executedAtUTC": "2026-10-09T07:03:24.808Z",
+  "mode": "REAL_PI_1.1.0_CORE_LOOP_WITH_PREWRITTEN_PROVIDER_RESPONSES",
+  "cases": [
+    {
+      "toolExecution": "sequential",
+      "trace": [
+        "request:1",
+        "tool:a:start",
+        "queued:followUp",
+        "queued:steer",
+        "tool:a:end",
+        "tool:b:start",
+        "tool:b:end",
+        "turn:1:end",
+        "delivered:steer",
+        "request:2",
+        "tool:c:start",
+        "tool:c:end",
+        "turn:2:end",
+        "request:3",
+        "turn:3:end",
+        "delivered:followUp",
+        "request:4",
+        "turn:4:end",
+        "agent:end"
+      ],
+      "requests": [
+        {
+          "request": 1,
+          "userInputs": [
+            "START: 执行两个无副作用的教学工具，再完成当前任务。"
+          ]
+        },
+        {
+          "request": 2,
+          "userInputs": [
+            "START: 执行两个无副作用的教学工具，再完成当前任务。",
+            "STEER: 后续改为只读检查。这是排队输入，不是撤销已执行动作。"
+          ]
+        },
+        {
+          "request": 3,
+          "userInputs": [
+            "START: 执行两个无副作用的教学工具，再完成当前任务。",
+            "STEER: 后续改为只读检查。这是排队输入，不是撤销已执行动作。"
+          ]
+        },
+        {
+          "request": 4,
+          "userInputs": [
+            "START: 执行两个无副作用的教学工具，再完成当前任务。",
+            "STEER: 后续改为只读检查。这是排队输入，不是撤销已执行动作。",
+            "FOLLOW_UP: 当前任务结束后，再整理一份摘要。"
+          ]
+        }
+      ],
+      "checks": {
+        "currentToolAndBatchCompleteBeforeSteering": true,
+        "steeringReachesNextRequest": true,
+        "followUpWaitsForCurrentWorkToFinish": true,
+        "queuesEmptyAtEnd": true
+      },
+      "fixtureModelCalls": 4,
+      "realModelCalls": 0
+    },
+    {
+      "toolExecution": "parallel",
+      "trace": [
+        "request:1",
+        "tool:a:start",
+        "queued:followUp",
+        "queued:steer",
+        "tool:b:start",
+        "tool:b:end",
+        "tool:a:end",
+        "turn:1:end",
+        "delivered:steer",
+        "request:2",
+        "tool:c:start",
+        "tool:c:end",
+        "turn:2:end",
+        "request:3",
+        "turn:3:end",
+        "delivered:followUp",
+        "request:4",
+        "turn:4:end",
+        "agent:end"
+      ],
+      "requests": [
+        {
+          "request": 1,
+          "userInputs": [
+            "START: 执行两个无副作用的教学工具，再完成当前任务。"
+          ]
+        },
+        {
+          "request": 2,
+          "userInputs": [
+            "START: 执行两个无副作用的教学工具，再完成当前任务。",
+            "STEER: 后续改为只读检查。这是排队输入，不是撤销已执行动作。"
+          ]
+        },
+        {
+          "request": 3,
+          "userInputs": [
+            "START: 执行两个无副作用的教学工具，再完成当前任务。",
+            "STEER: 后续改为只读检查。这是排队输入，不是撤销已执行动作。"
+          ]
+        },
+        {
+          "request": 4,
+          "userInputs": [
+            "START: 执行两个无副作用的教学工具，再完成当前任务。",
+            "STEER: 后续改为只读检查。这是排队输入，不是撤销已执行动作。",
+            "FOLLOW_UP: 当前任务结束后，再整理一份摘要。"
+          ]
+        }
+      ],
+      "checks": {
+        "currentToolAndBatchCompleteBeforeSteering": true,
+        "steeringReachesNextRequest": true,
+        "followUpWaitsForCurrentWorkToFinish": true,
+        "queuesEmptyAtEnd": true
+      },
+      "fixtureModelCalls": 4,
+      "realModelCalls": 0
+    }
+  ],
+  "limits": [
+    "Official core loop and queues are real; model responses and user inputs are explicitly scripted fixtures.",
+    "Both sequential and parallel batches complete before steering is delivered; steering is not abort.",
+    "No TUI, hot reload, real provider call or instruction-following quality was tested.",
+    "All tools are in-memory observations; no files are changed and no external action is cancelled or rolled back."
+  ]
+}
